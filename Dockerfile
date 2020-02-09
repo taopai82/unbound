@@ -1,5 +1,5 @@
 FROM alpine:latest
-RUN apk add --update unbound && wget -O /usr/share/dns-root-hints/named.root https://www.internic.net/domain/named.root
+RUN apk add unbound && wget -O /usr/share/dns-root-hints/named.root https://www.internic.net/domain/named.root
 RUN sed -i 's/verbosity: 1/verbosity: 0/g; \
 	s/# do-ip6: yes/do-ip6: no/g; \
 	s/# edns-buffer-size: 4096/edns-buffer-size: 1472/g; \
